@@ -38,4 +38,10 @@ page('/search', function (ctx, next) {
   })
 })
 
+var productionEnv = !!~window.location.host.indexOf('github.io')
+
+if (productionEnv) {
+  page.base('/tvify')
+}
+
 page()
