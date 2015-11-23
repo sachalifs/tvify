@@ -16,7 +16,7 @@ var template = `<article class="tv-show">
           </div>
         </article>`
 
-export default function renderShows(shows) {
+export default function renderShows(shows = []) {
   $tvShowsContainer.find('.loader').remove();
   shows.forEach(function (show) {
     var article = template
