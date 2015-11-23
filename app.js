@@ -10982,7 +10982,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var template = '<article class="tv-show">\n          <div class="left img-container">\n            <img src=":img:" alt=":img alt:">\n          </div>\n          <div class="right info">\n            <h1>:name:</h1>\n            <p>:summary:</p>\n            <button class="like">💖</button\n          </div>\n        </article>';
 
-function renderShows(shows) {
+function renderShows() {
+  var shows = arguments.length <= 0 || arguments[0] === undefined ? [] : arguments[0];
+
   _tvShowsContainer2.default.find('.loader').remove();
   shows.forEach(function (show) {
     var article = template.replace(':name:', show.name).replace(':img:', show.image ? show.image.medium : '').replace(':summary:', show.summary).replace(':img alt:', show.name + " Logo");
